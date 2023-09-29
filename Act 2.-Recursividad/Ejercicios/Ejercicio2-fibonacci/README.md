@@ -1,3 +1,3 @@
-# Ejecucion de Ejercicio1-factorial
+# Ejecucion de Ejercicio2 fibonacci
 
-![image](https://github.com/ivanchenoweth/data-structure-js-UTH/assets/284874/b2a36752-b9fb-43e5-9746-d49df7189fa8)
+![Fibonacci](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/931c8462-e1ea-4154-8699-2148f00cca11)
