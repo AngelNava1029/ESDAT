@@ -1,3 +1,4 @@
-# Ejecucion de Ejercicio1-factorial
+# Ejecucion de Ejercicio6 LetterCombinations
 
-![image](https://github.com/ivanchenoweth/data-structure-js-UTH/assets/284874/b2a36752-b9fb-43e5-9746-d49df7189fa8)
+![LetterCombinations](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/e57c16de-c910-4d22-82eb-85ce4d7da0cc)
+
