@@ -1,59 +1,27 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.prev = null;
-    this.next = null;
-  }
-}
-
-// Lista doblemente enlazada
-class DoublyLinkedList {
+class Stack {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.items = [];
   }
 
-  // Método para añadir un nodo al final de la lista
-  append(data) {
-    const newNode = new Node(data);
-
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      newNode.prev = this.tail;
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
+  push(element) {
+    this.items.push(element);
   }
 
-  // Método para eliminar un nodo por valor
-  delete(data) {
-    let current = this.head;
-
-    while (current) {
-      if (current.data === data) {
-        if (current.prev) {
-          current.prev.next = current.next;
-        } else {
-          this.head = current.next;
-        }
-
-        if (current.next) {
-          current.next.prev = current.prev;
-        } else {
-          this.tail = current.prev;
-        }
-
-        return true; // Nodo eliminado
-      }
-
-      current = current.next;
+  pop() {
+    if (this.isEmpty()) {
+      return "La pila está vacía";
     }
+    return this.items.pop();
+  }
 
-    return false; // Nodo no encontrado
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
   }
 }
 
 
-export { DoublyLinkedList };
+export { Stack };

@@ -1,44 +1,32 @@
-// Nodo de la lista enlazada
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
-// Lista enlazada única
-class LinkedList {
+class Queue {
   constructor() {
-    this.head = null;
+    this.items = [];
   }
 
-  // Añadir un nuevo nodo al final de la lista
-  append(data) {
-    const newNode = new Node(data);
-
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let lastNode = this.head;
-      while (lastNode.next) {
-        lastNode = lastNode.next;
-      }
-      lastNode.next = newNode;
-    }
+  enqueue(item) {
+    this.items.push(item);
   }
 
-  // Obtener la longitud de la lista
-  length() {
-    let count = 0;
-    let current = this.head;
-
-    while (current) {
-      count++;
-      current = current.next;
+  dequeue() {
+    if (this.isEmpty()) {
+      return null;
     }
+    return this.items.shift();
+  }
 
-    return count;
+  isEmpty() {
+    return this.items.length === 0;
   }
 }
 
-module.exports = LinkedList;
+function atencionAlCliente(customerQueue) {
+  const atendidos = [];
+
+  while (!customerQueue.isEmpty()) {
+    atendidos.push(customerQueue.dequeue());
+  }
+
+  return atendidos;
+}
+
+export{atencionAlCliente,Queue }

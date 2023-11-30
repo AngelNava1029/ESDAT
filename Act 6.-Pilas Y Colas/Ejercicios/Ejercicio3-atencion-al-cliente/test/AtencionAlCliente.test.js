@@ -1,40 +1,41 @@
-const LinkedList = require('../ListaEnlazadaUnica');
+import { atencionAlCliente,Queue } from '../AtencionAlCliente';
 
 
-describe('LinkedList', () => {
-  test('debería añadir elementos a la lista y devolver la longitud correcta', () => {
-    const linkedList = new LinkedList();
+describe('atencionAlCliente', () => {
+  test('atiende a los clientes en orden de llegada', () => {
+    const customerQueue = new Queue();
+    customerQueue.enqueue("Cliente 1");
+    customerQueue.enqueue("Cliente 2");
+    customerQueue.enqueue("Cliente 3");
 
-    linkedList.append(1);
-    linkedList.append(2);
-    linkedList.append(3);
+    const atendidos = atencionAlCliente(customerQueue);
 
-    expect(linkedList.length()).toBe(3);
+    expect(atendidos).toEqual(["Cliente 1", "Cliente 2", "Cliente 3"]);
   });
 
-  test('debería devolver longitud cero para una lista vacía', () => {
-    const linkedList = new LinkedList();
+  test('funciona correctamente con una cola vacía', () => {
+    const customerQueue = new Queue();
 
-    expect(linkedList.length()).toBe(0);
+    const atendidos = atencionAlCliente(customerQueue);
+
+    expect(atendidos).toEqual([]);
   });
 
-  test('debería manejar correctamente una lista con un solo elemento', () => {
-    const linkedList = new LinkedList();
+  test('atiende a los clientes en orden incluso después de agregar más clientes', () => {
+    const customerQueue = new Queue();
+    customerQueue.enqueue("Cliente 1");
+    customerQueue.enqueue("Cliente 2");
+    customerQueue.enqueue("Cliente 3");
 
-    linkedList.append(42);
+    const atendidos = atencionAlCliente(customerQueue);
 
-    expect(linkedList.length()).toBe(1);
-  });
+    // Añadir más clientes después de la atención inicial
+    customerQueue.enqueue("Cliente 4");
+    customerQueue.enqueue("Cliente 5");
 
-  test('debería devolver la longitud correcta después de eliminar elementos', () => {
-    const linkedList = new LinkedList();
+    atendidos.push(customerQueue.dequeue());
+    atendidos.push(customerQueue.dequeue());
 
-    linkedList.append(5);
-    linkedList.append(10);
-    linkedList.append(15);
-
-    linkedList.head = linkedList.head.next; // Eliminar el primer elemento
-
-    expect(linkedList.length()).toBe(2);
+    expect(atendidos).toEqual(["Cliente 1", "Cliente 2", "Cliente 3", "Cliente 4", "Cliente 5"]);
   });
 });

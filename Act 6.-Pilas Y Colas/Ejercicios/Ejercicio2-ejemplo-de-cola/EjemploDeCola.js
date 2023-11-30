@@ -1,42 +1,55 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
-class LinkedList {
+// Implementación de una cola utilizando un arreglo
+class Queue {
   constructor() {
-    this.head = null;
+    this.elements = [];
   }
 
-  addNode(data) {
-    const newNode = new Node(data);
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
+  enqueue(element) {
+    this.elements.push(element);
   }
 
-  hasCycle() {
-    const visitedNodes = new Set();
-    let current = this.head;
-
-    while (current) {
-      if (visitedNodes.has(current)) {
-        return true; // Hay un ciclo
-      }
-
-      visitedNodes.add(current);
-      current = current.next;
+  dequeue() {
+    if (this.isEmpty()) {
+      return "La cola está vacía";
     }
+    return this.elements.shift();
+  }
 
-    return false; // No hay ciclo
+  isEmpty() {
+    return this.elements.length === 0;
+  }
+
+  size() {
+    return this.elements.length;
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return "La cola está vacía";
+    }
+    return this.elements[0];
   }
 }
-export { LinkedList }
+
+// Uso de la cola
+let cola = new Queue();
+
+// Agregar elementos a la cola
+cola.enqueue("Manzana");
+cola.enqueue("Banana");
+cola.enqueue("Naranja");
+
+// Obtener el primer elemento de la cola (sin eliminarlo)
+console.log(cola.peek()); // Imprime "Manzana"
+
+// Eliminar y obtener el primer elemento de la cola
+let elementoEliminado = cola.dequeue();
+console.log(elementoEliminado); // Imprime "Manzana"
+
+// Verificar si la cola está vacía
+console.log(cola.isEmpty()); // Imprime false
+
+// Obtener el tamaño de la cola
+console.log(cola.size()); // Imprime 2
+
+module.exports = Queue;
