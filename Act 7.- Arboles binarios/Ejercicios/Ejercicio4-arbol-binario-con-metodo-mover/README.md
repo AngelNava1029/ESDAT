@@ -1,4 +1,5 @@
-# Ejecucion de Ejercicio4-PilaDePlatos
+# Ejecucion de Ejercicio4-ArbolBinarioConMetodoMover
 
 
-![image](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/34ee3c9b-e8fd-42c0-8758-46e1c48b87a0)
+![image](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/4a273160-bae4-4c70-aabd-ec9361e1cbf7)
+
