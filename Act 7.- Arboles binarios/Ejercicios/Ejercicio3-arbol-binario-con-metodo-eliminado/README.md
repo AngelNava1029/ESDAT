@@ -1,3 +1,4 @@
-# Ejecucion de Ejercicio3-AtencionAlCliente
+# Ejecucion de Ejercicio3-ArbolBinarioConMetodoEliminado
 
-![image](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/c2df32f7-98e5-492b-bdae-5371e06c7eca)
+![image](https://github.com/AngelNava1029/ESTRUCTURAS-DE-DATOS-APLICADAS-/assets/122839982/ecc8b3e9-915e-41a8-bae5-510b7a89f9b2)
+
